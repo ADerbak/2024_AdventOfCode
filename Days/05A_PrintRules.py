@@ -12,7 +12,6 @@ with open(filename, 'r') as f:
         if "," in line:
             rule_list.append(str(line).strip().split(','))
             
-# print(page_dict)
 
 median_value_sum = 0
 
@@ -24,6 +23,8 @@ for rule in rule_list:
     if all((primary_page, secondary_page) in order_list for primary_page, secondary_page in list_of_rules):
         # Get Median
         median_value_sum += int(rule[math.ceil(len(rule)/2)-1])
+    
+        
 
     
 print(median_value_sum)
